@@ -1,5 +1,6 @@
 FROM quay.io/eclipse/che-java11-maven:nightly as builder
-ENV MAVEN_CONFIG -Duser.home=/home/user
+ENV MAVEN_OPTS='-Dmaven.repo.local=/home/user/.m2/repository' \
+    MAVEN_CONFIG='-Duser.home=/home/user'
 COPY . /quickperf-examples/
 WORKDIR /quickperf-examples
 RUN env && \
