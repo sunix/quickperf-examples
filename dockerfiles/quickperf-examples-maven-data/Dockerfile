@@ -4,7 +4,7 @@ ENV MAVEN_OPTS='-Dmaven.repo.local=/home/user/.m2/repository' \
 COPY . /quickperf-examples/
 WORKDIR /quickperf-examples
 RUN env && \
-    mvn test -Dmaven.test.skip=false -fn
+    mvn clean test -Dmaven.test.skip=false -Dmaven.test.failure.ignore
 
 FROM registry.access.redhat.com/ubi8/ubi-minimal
 COPY --from=builder /home/user/.m2/repository /work/m2repo
