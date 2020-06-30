@@ -40,5 +40,14 @@
         <module>hibernate-junit5</module>
         <module>hibernate-testng</module>
     </modules>
-
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.12.4</version>tions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>
