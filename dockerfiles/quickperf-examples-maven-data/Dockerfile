@@ -4,7 +4,7 @@ ENV MAVEN_OPTS='-XX:MaxRAMPercentage=50 -XX:+UseParallelGC -XX:MinHeapFreeRatio=
     JAVA_OPTS='-XX:MaxRAMPercentage=50 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xms20m -Djava.security.egd=file:/dev/./urandom' \
     JAVA_TOOL_OPTIONS='-XX:MaxRAMPercentage=50 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xms20m -Djava.security.egd=file:/dev/./urandom'    
     
-COPY --chown=1001:1001 . /quickperf-examples/
+COPY --chown=10001:10001 . /quickperf-examples/
 WORKDIR /quickperf-examples
 RUN touch /quickperf-examples/test
 RUN env; \
