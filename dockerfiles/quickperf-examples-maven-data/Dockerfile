@@ -6,6 +6,7 @@ ENV MAVEN_OPTS='-XX:MaxRAMPercentage=50 -XX:+UseParallelGC -XX:MinHeapFreeRatio=
     
 COPY --chown=1001:1001 . /quickperf-examples/
 WORKDIR /quickperf-examples
+RUN touch /quickperf-examples/test
 RUN env; \
     mvn -version; \
     mvn clean install -N ; \
