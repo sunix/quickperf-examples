@@ -8,7 +8,7 @@ COPY --chown=10001:10001 . /quickperf-examples/
 WORKDIR /quickperf-examples
 RUN env; \
     ls -ll /quickperf-examples ; \
-    mvn -Dmaven.test.skip=false -Dmaven.test.failure.ignore clean test;
+    mvn -Dmaven.test.skip=false -Dmaven.test.failure.ignore clean install;
 FROM registry.access.redhat.com/ubi8/ubi-minimal
 COPY --from=builder /home/user/.m2/repository /work/m2repo
 COPY dockerfiles/quickperf-examples-maven-data/data-copy.sh /data-copy.sh
