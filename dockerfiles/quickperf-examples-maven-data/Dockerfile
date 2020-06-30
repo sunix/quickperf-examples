@@ -6,7 +6,8 @@ ENV MAVEN_OPTS='-XX:MaxRAMPercentage=50 -XX:+UseParallelGC -XX:MinHeapFreeRatio=
     
 COPY . /quickperf-examples/
 WORKDIR /quickperf-examples
-RUN env && \
+RUN env; \
+    mvn -version; \
     mvn clean install -Dmaven.test.skip=false -Dmaven.test.failure.ignore -f jvm-junit4/pom.xml -Dtest=org.quickperf.jvm.JvmAnnotationsJunit4Test dependency:go-offline || \
     mvn clean install -Dmaven.test.skip=false -Dmaven.test.failure.ignore -f jvm-junit5/pom.xml -Dtest=org.quickperf.jvm.JvmAnnotationsJunit5Test dependency:go-offline || \
     mvn clean install -Dmaven.test.skip=false -Dmaven.test.failure.ignore -f jvm-testng/pom.xml -Dtest=org.quickperf.jvm.JvmAnnotationsTestNGTest dependency:go-offline || \
